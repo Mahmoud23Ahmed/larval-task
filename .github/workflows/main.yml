@@ -20,6 +20,6 @@ jobs:
       - name: "Building docker image"  
         run: docker build -t mahmoud23ahmed/myimage .
 
-      - name: "pushin to docker hub"
+      - name: "pushing to docker hub"
         run: docker push mahmoud23ahmed/myimage
 
