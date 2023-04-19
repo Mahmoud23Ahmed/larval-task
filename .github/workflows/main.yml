@@ -18,7 +18,7 @@ jobs:
         run: docker login --username mahmoud23ahmed --password dckr_pat_rRqfop4gnURgiA0z1LufDT65wE8
 
       - name: "Building docker image"  
-        run: docker buld -t mahmoud23ahmed/myimage .
+        run: docker build -t mahmoud23ahmed/myimage .
 
       - name: "pushin to docker hub"
         run: docker push mahmoud23ahmed/myimage
