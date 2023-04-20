@@ -24,10 +24,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . .
 
 
+RUN cd /var/www/html && composer install --no-dev --prefer-dist --optimize-autoloader
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --no-cache
 
 
-RUN cd /var/www/html && composer install --no-dev --prefer-dist --optimize-autoloader
 
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
