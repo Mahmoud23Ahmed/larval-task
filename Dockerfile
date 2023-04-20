@@ -26,8 +26,9 @@ COPY . .
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --no-cache
 
 
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -x 755 /var/www/html \
+    && chmod -x 777 storage bootstrap/cache
  
 
 EXPOSE 8000
