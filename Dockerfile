@@ -24,7 +24,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . .
 
 
-RUN composer install --no-interaction --no-progress --no-scripts
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --no-cache
+
+# Copy the project files
 
 
 RUN chown -R www-data:www-data /var/www/html \
