@@ -23,13 +23,14 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 COPY . .
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --no-cache
+
+RUN composer install --no-interaction --no-progress --no-scripts
 
 
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -x 755 /var/www/html \
-    && chmod -x 777 storage bootstrap/cache
- 
+    && chmod -R 755 /var/www/html \
+    && chmod -R 777 storage bootstrap/cache
+
 
 EXPOSE 8000
 
