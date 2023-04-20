@@ -15,7 +15,7 @@ RUN docker-php-ext-install pdo_mysql zip
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --no-cache
 
 # Copy the project files
-COPY . ./
+COPY . /var/www/html
 
 # Install the project dependencies
 RUN cd /var/www/html && composer install --no-dev --prefer-dist --optimize-autoloader
